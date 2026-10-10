@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ristorante Cedro — Menù Digitale</title>
+    <meta name="description" content="Ristorante Cedro — cucina libanese nel cuore di Milano: mezze, grigliate e dolci tipici. Corso Lodi 74, Milano.">
+    <link rel="icon" type="image/png" sizes="any" href="uploads/favicon.png">
+    <link rel="apple-touch-icon" href="uploads/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/variables.css?v=17">
+    <link rel="stylesheet" href="css/reset.css?v=17">
+    <link rel="stylesheet" href="css/layout.css?v=17">
+    <link rel="stylesheet" href="css/components.css?v=17">
+    <link rel="stylesheet" href="css/animations.css?v=17">
+    <link rel="stylesheet" href="css/flipbook.css?v=17">
+    <link rel="stylesheet" href="css/zoom.css?v=17">
+    <link rel="stylesheet" href="css/reader.css?v=17">
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-ink"></div>
+        <div class="preloader-text">Cedro</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="navbar-logo">CEDRO<span>RISTORANTE</span></a>
+        <div class="lang-selector">
+            <button class="lang-btn is-active" data-lang="it">IT</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
+    </nav>
+
+    <!-- FLIPBOOK -->
+    <section id="menu-flipbook" class="flipbook-section" aria-label="Menù digitale interattivo">
+        <div class="flipbook-container">
+
+            <nav class="section-island" id="sectionIsland" aria-label="Sezioni del menù">
+                <button class="island-btn is-active" data-target="1" data-i18n="isl_menu">Menù</button>
+                <button class="island-btn" data-target="3" data-i18n="isl_antipasti">Antipasti</button>
+                <button class="island-btn" data-target="6" data-i18n="isl_insalate">Insalate</button>
+                <button class="island-btn" data-target="9" data-i18n="isl_grigliate">Grigliate</button>
+                <button class="island-btn" data-target="10" data-i18n="isl_arrosti">Arrosti</button>
+                <button class="island-btn" data-target="12" data-i18n="isl_panini">Panini</button>
+                <button class="island-btn" data-target="15" data-i18n="isl_dolci">Dolci</button>
+                <button class="island-btn" data-target="16" data-i18n="isl_bevande">Bevande</button>
+                <button class="island-btn" data-target="18" data-i18n="isl_info">Info</button>
+            </nav>
+
+            <div class="flipbook shadow" id="flipbook">
+                <div class="page p1 odd" data-page="1">
+                    <div class="page-content has-photo">
+                        <div class="flipbook-photo-layer cover-page">
+                            <div class="cover-logo-box">
+                                <img class="cover-logo" src="uploads/logo.png" alt="Ristorante Cedro">
+                            </div>
+                            <div class="cover-sign">
+                                <span class="cover-rule"></span>
+                                <p data-i18n="ui_tagline_1">La cucina del Libano</p>
+                                <p data-i18n="ui_tagline_2">nel cuore di Milano</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="page p2 even page-scaled" data-page="2">
+                    <div class="page-content page-list">
+                        <div class="page-header" data-i18n="menu_title">Il Nostro Menù</div>
+                        <div class="list-section" style="justify-content:center;justify-content:safe center;gap:0.8em;padding:0.9em 0.5rem 0.5rem;">
+                            <p style="margin:0;font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.74em;font-style:italic;letter-spacing:0.16em;text-transform:uppercase;color:rgba(140,118,96,0.92);text-align:center;" data-i18n="ui_welcome_title">Benvenuto</p>
+
+                            <p style="margin:0;font-family:'Cormorant Garamond','Playfair Display',serif;font-size:1.12em;line-height:1.6;color:rgba(46,38,30,0.86);font-style:italic;text-align:center;" data-i18n="ui_welcome_p1">Scopri la ricchezza della cucina libanese: fresca, profumata e
+                                preparata con tanto amore. I nostri piatti ti invitano a un viaggio culinario attraverso
+                                il Libano, una terra piena di sapori, tradizioni e calore.</p>
+                            <div style="width:46px;height:1px;background:#c4a882;margin:0.1rem auto;opacity:0.5;"></div>
+                            <p style="margin:0;font-family:'Cormorant Garamond','Playfair Display',serif;font-size:1.04em;line-height:1.58;color:rgba(46,38,30,0.74);text-align:center;" data-i18n="ui_welcome_p2">Diamo grande importanza alla qualità e utilizziamo solo
+                                ingredienti freschi, arricchiti con spezie libanesi originali, per creare un'esperienza
+                                autentica che rimarrà impressa nella memoria.</p>
+                            <p style="margin:0;font-family:'Cormorant Garamond','Playfair Display',serif;font-size:1.04em;line-height:1.58;color:rgba(46,38,30,0.74);text-align:center;" data-i18n="ui_welcome_p3">Oltre alle nostre specialità tradizionali come mezze,
+                                grigliate e dolci tipici, troverai anche piatti classici europei: insalate croccanti,
+                                burger succosi, tenere steak e pizze appena sfornate. C'è davvero per tutti.</p>
+                            <div style="display:flex;align-items:center;justify-content:center;gap:0.6em;margin-top:0.3em;">
+                                <i class="fa-solid fa-tree" style="color:#c4a882;font-size:0.7rem;"></i>
+                                <span style="font-family:'Playfair Display',serif;font-size:0.58rem;letter-spacing:0.32em;text-transform:uppercase;color:rgba(140,118,96,0.85);" data-i18n="ui_buonappetito">Buon appetito</span>
+                                <i class="fa-solid fa-tree" style="color:#c4a882;font-size:0.7rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="page p3 odd" data-page="3">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_antipasti_freddi">Antipasti Freddi</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d01" data-img="uploads/platos/d01.jpg" data-allerg="sesamo|vegano"><span class="item-num">1</span>
+                                <div class="item-body"><span class="item-name">Hummus</span><span class="item-allergens"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Crema di
+                                        ceci, ceci interi, salsa di sesamo e evo</span></div><span class="item-price">€
+                                    8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d02" data-img="uploads/platos/d02.jpg" data-allerg="sesamo"><span class="item-num">2</span>
+                                <div class="item-body"><span class="item-name">Hummus shawarma</span><span class="item-allergens"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"></span><span class="item-desc">Crema di ceci con carne kabab di manzo (kabab caldo)</span>
+                                </div><span class="item-price">€ 11,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d03" data-img="uploads/platos/d03.jpg" data-allerg="vegano"><span class="item-num">3</span>
+                                <div class="item-body"><span class="item-name">Baba ghannouj</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Melanzane affumicate con peperoni, melograno e evo</span>
+                                </div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d04" data-img="uploads/platos/d04.jpg" data-allerg="glutine|frutta-a-guscio|vegano"><span class="item-num">4</span>
+                                <div class="item-body"><span class="item-name">Muhammara</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Pesto di peperoni rossi e noci, spezie libanesi, evo e melassa di melograno</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d05" data-img="uploads/platos/d05.jpg" data-allerg="sesamo|vegano"><span class="item-num">5</span>
+                                <div class="item-body"><span class="item-name">Moutabbal di melanzane</span><span class="item-allergens"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Crema di
+                                        melanzane affumicate con salsa di sesamo, evo e melograno</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p4 even" data-page="4">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_antipasti_freddi">Antipasti Freddi</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d06" data-img="uploads/platos/d06.jpg" data-allerg="sesamo|vegano"><span class="item-num">6</span>
+                                <div class="item-body"><span class="item-name">Moutabbal di zucchine</span><span class="item-allergens"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Zucchine
+                                        arrostite con salsa di sesamo e menta</span></div><span class="item-price">€
+                                    8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d07" data-img="uploads/platos/d07.jpg" data-allerg="latte"><span class="item-num">7</span>
+                                <div class="item-body"><span class="item-name">Labneh wa na'na'</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Spalmabile di jogurtina, evo e menta</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d08" data-img="uploads/platos/d08.jpg" data-allerg="vegano"><span class="item-num">8</span>
+                                <div class="item-body"><span class="item-name">Moussaka</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Spezzatino di melanzane al forno con salsa di pomodoro e
+                                        melograno (piatto freddo)</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d09" data-img="uploads/platos/d09.jpg" data-allerg="vegano"><span class="item-num">9</span>
+                                <div class="item-body"><span class="item-name">Waraq inab 5 pz</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Foglie di vite ripiene di riso e pomodoro alla
+                                        mediorientale</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d10" data-img="uploads/platos/d10.jpg" data-allerg="glutine"><span class="item-num">10</span>
+                                <div class="item-body"><span class="item-name">Kibbeh nayyeh</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"></span><span class="item-desc">Tartare di filetto scelto di manzo all'olio, mix di spezie e
+                                        bulgur (specialità della casa)</span></div><span class="item-price">€
+                                    11,00</span>
+                            </div>
+                    <div class="list-item" data-key="d11" data-img="uploads/platos/d11.jpg"><span class="item-num">11</span>
+                                <div class="item-body"><span class="item-name">Battuta di filetto</span><span class="item-desc">Battuta di filetto scelto di manzo al naturale (specialità
+                                        della casa)</span></div><span class="item-price">€ 12,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p5 odd" data-page="5">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_antipasti">Antipasti</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d12" data-img="uploads/platos/d12.jpg" data-allerg="latte"><span class="item-num">12</span>
+                                <div class="item-body"><span class="item-name">Halloumi</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Formaggio ovino grigliato o saltato in padella con evo (su
+                                        richiesta)</span></div><span class="item-price">€ 10,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d13" data-img="uploads/platos/d13.jpg" data-allerg="latte|sesamo|frutta-a-guscio"><span class="item-num">13</span>
+                                <div class="item-body"><span class="item-name">Hummus bascia</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Hummus con straccetti di carne magra d'agnello speziata e saltata con pinoli (specialità della casa)</span></div><span class="item-price">€ 10,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d14" data-img="uploads/platos/d14.jpg" data-allerg="sesamo|vegano"><span class="item-num">14</span>
+                                <div class="item-body"><span class="item-name">Falafel 5 pz</span><span class="item-allergens"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Frittura
+                                        leggera di polpette di ceci con sette spezie fritte, accompagnate con salsa
+                                        tahina e sottaceti (specialità della casa)</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d15" data-img="uploads/platos/d15.jpg" data-allerg="vegano"><span class="item-num">15</span>
+                                <div class="item-body"><span class="item-name">Batata harra</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Cubetti di patate saltati con evo, peperoncino, coriandolo e
+                                        limone</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d16" data-img="uploads/platos/d16.jpg" data-allerg="glutine|latte"><span class="item-num">16</span>
+                                <div class="item-body"><span class="item-name">Kibbeh 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Polpette di bulgur ripiene con trita di vitello e agnello speziata alla libanese</span></div><span class="item-price">€ 9,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p6 even" data-page="6">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_antipasti">Antipasti</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d17" data-img="uploads/platos/d17.jpg" data-allerg="glutine|latte|uovo"><span class="item-num">17</span>
+                                <div class="item-body"><span class="item-name">Sigari di formaggio 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/uovo.png" alt="Uovo" data-i18n-alt="alg_uovo" loading="lazy" decoding="async"></span><span class="item-desc">Involtini di pasta sfoglia
+                                        ripieni di formaggio fresco libanese</span></div><span class="item-price">€
+                                    7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d18" data-img="uploads/platos/d18.jpg" data-allerg="glutine|latte|uovo"><span class="item-num">18</span>
+                                <div class="item-body"><span class="item-name">Sambussik 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/uovo.png" alt="Uovo" data-i18n-alt="alg_uovo" loading="lazy" decoding="async"></span><span class="item-desc">Fagottino di sfoglia ripieno di trita d'agnello e vitello</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <h3 class="list-cat"><i class="fa-solid fa-seedling cat-icon"></i><span data-i18n="cat_insalate">Insalate</span></h3>
+                    <div class="list-item has-allerg" data-key="d19" data-img="uploads/platos/d19.jpg" data-allerg="glutine|vegano"><span class="item-num">19</span>
+                                <div class="item-body"><span class="item-name">Tabbouleh</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Spezzato di
+                                        grano integrale con abbondante prezzemolo fino, pomodoro, lacrime di succo di
+                                        limone e olio evo (specialità della casa)</span></div><span class="item-price">€
+                                    8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d20" data-img="uploads/platos/d20.jpg" data-allerg="glutine|vegano"><span class="item-num">20</span>
+                                <div class="item-body"><span class="item-name">Fattoush</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Verdure
+                                        fresche di stagione condite con evo, sommacco, limone, mosto di melograno e pane
+                                        arabo croccante (specialità della casa)</span></div><span class="item-price">€
+                                    8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d21" data-img="uploads/platos/d21.jpg" data-allerg="latte"><span class="item-num">21</span>
+                                <div class="item-body"><span class="item-name">Laban bi khiar</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Yogurt con cetrioli, menta e aglio</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p7 odd" data-page="7">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_piatti_caldi">Piatti caldi e risi</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d22" data-img="uploads/platos/d22.jpg" data-allerg="frutta-a-guscio"><span class="item-num">22</span>
+                                <div class="item-body"><span class="item-name">Tadbì'a</span><span class="item-allergens"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Lunga e lenta cottura di
+                                        riso con trita d'agnello e bocconcini di carne saltati con mandorle
+                                        tostate</span></div><span class="item-price">€ 12,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d23" data-img="uploads/platos/d23.jpg" data-allerg="frutta-a-guscio"><span class="item-num">23</span>
+                                <div class="item-body"><span class="item-name">Kabseh</span><span class="item-allergens"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Riso basmati speziato con
+                                        stufato di pollo e peperoni, uvetta e mandorle tostate</span></div><span class="item-price">€ 10,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d24" data-img="uploads/platos/d24.jpg" data-allerg="vegano"><span class="item-num">24</span>
+                                <div class="item-body"><span class="item-name">Mujaddara</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Riso e lenticchie cotti al vapore con cipolla croccante</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d25" data-img="uploads/platos/d25.jpg" data-allerg="glutine|vegano"><span class="item-num">25</span>
+                                <div class="item-body"><span class="item-name">Riso nostrano</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Riso basmati
+                                        con capelli d'angelo tostati (da corredo)</span></div><span class="item-price">€
+                                    7,00</span>
+                            </div>
+                    <div class="list-item" data-key="d26" data-img="uploads/platos/d26.jpg"><span class="item-num">26</span>
+                                <div class="item-body"><span class="item-name">Riso shawarma</span><span class="item-desc">Riso basmati con carne kabab di manzo</span></div><span class="item-price">€ 10,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d27" data-img="uploads/platos/d27.jpg" data-allerg="vegano"><span class="item-num">27</span>
+                                <div class="item-body"><span class="item-name">Fassulia baida</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Fagioli cannellini in salsa di pomodoro con cipolla, spezie, coriandolo e aglio · con bocconcini di vitello € 9,00</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p8 even" data-page="8">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_legumi">Legumi e stufati</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d28" data-img="uploads/platos/d28.jpg" data-allerg="vegano"><span class="item-num">28</span>
+                                <div class="item-body"><span class="item-name">Bamia</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Gombo con salsa di pomodoro, aglio e olio · con bocconcini di
+                                        vitello € 10,00</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <div class="list-item" data-key="d29" data-img="uploads/platos/d29.jpg"><span class="item-num">29</span>
+                                <div class="item-body"><span class="item-name">Piselli e carote</span><span class="item-desc">Un'armonia di piselli, carote, salsa di pomodoro e bocconcini di vitello · versione vegetariana € 7,00</span></div><span class="item-price">€
+                                    9,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d30" data-img="uploads/platos/d30.jpg" data-allerg="glutine|latte|frutta-a-guscio"><span class="item-num">30</span>
+                                <div class="item-body"><span class="item-name">Kibbeh bi laban 4 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Polpette di kibbeh in salsa a base di jogurt cotto (specialità della casa)</span></div><span class="item-price">€ 15,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d31" data-img="uploads/platos/d31.jpg" data-allerg="glutine|latte|sesamo|frutta-a-guscio"><span class="item-num">31</span>
+                                <div class="item-body"><span class="item-name">Fatteh di ceci</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Piatto popolare a base di ceci, jogurt, salsa tahina, pane tostato e burro alla noisette (specialità della casa) · vegana su richiesta</span></div><span class="item-price">€ 10,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p9 odd" data-page="9">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_grigliate">Grigliate</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d32" data-img="uploads/platos/d32.jpg" data-allerg="latte"><span class="item-num">32</span>
+                                <div class="item-body"><span class="item-name">Shish taouq</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Tre spiedini di petto di pollo a lunga marinatura speziati e grigliati, servito con riso e pane.</span></div><span class="item-price">€ 14,00</span>
+                            </div>
+                    <div class="list-item" data-key="d33" data-img="uploads/platos/d33.jpg"><span class="item-num">33</span>
+                                <div class="item-body"><span class="item-name">Kafta</span><span class="item-desc">Tre polpette di misto d'agnello e vitello con cipolla trita stese su spiedini alla griglia, servite con riso e pane.</span></div><span class="item-price">€
+                                    16,00</span>
+                            </div>
+                    <div class="list-item" data-key="d34" data-img="uploads/platos/d34.jpg"><span class="item-num">34</span>
+                                <div class="item-body"><span class="item-name">Shish kabab</span><span class="item-desc">Arrosticini di vitello speziati e grigliati alla libanese,
+                                        serviti su tre spiedini con pane e riso · versione d'agnello € 19,00</span></div><span class="item-price">€ 17,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d35" data-img="uploads/platos/d35.jpg" data-allerg="glutine"><span class="item-num">35</span>
+                                <div class="item-body"><span class="item-name">Costolette d'agnello 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"></span><span class="item-desc">Scelte e servite con riso nostrano</span></div><span class="item-price">€ 20,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d36" data-img="uploads/platos/d36.jpg" data-allerg="latte"><span class="item-num">36</span>
+                                <div class="item-body"><span class="item-name">Mix mashaoui</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Misto di spiedini di kafta, taouq, kabab e costoletta d'agnello con riso e insalata</span></div><span class="item-price">€
+                                    25,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p10 even" data-page="10">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_arrosti">Arrosti</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d37" data-img="uploads/platos/d37.jpg" data-allerg="latte"><span class="item-num">37</span>
+                                <div class="item-body"><span class="item-name">Arrosto di pollo</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Mezzo pollo arrosto (lenta cottura), con riso nostrano, patatine fritte o insalatina mista e tumina</span></div><span class="item-price">€ 17,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d38" data-img="uploads/platos/d38.jpg" data-allerg="sesamo"><span class="item-num">38</span>
+                                <div class="item-body"><span class="item-name">Shawarma in piatto</span><span class="item-allergens"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"></span><span class="item-desc">Selezione di vitello arrostita, guarnita con pomodori,
+                                        prezzemolo, sottaceti e salsa di sesamo</span></div><span class="item-price">€
+                                    14,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d39" data-img="uploads/platos/d39.jpg" data-allerg="glutine|latte|senape"><span class="item-num">39</span>
+                                <div class="item-body"><span class="item-name">Hamburger</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/senape.png" alt="Senape" data-i18n-alt="alg_senape" loading="lazy" decoding="async"></span><span class="item-desc">Hamburger di carne scelta di manzo con formaggio cheddar o senza, servito con patatine fritte e salse a scelta · versione pollo € 9,00</span></div><span class="item-price">€
+                                    11,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p11 odd" data-page="11">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_zuppe_panini">Zuppe e panini</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d40" data-img="uploads/platos/d40.jpg" data-allerg="vegano"><span class="item-num">40</span>
+                                <div class="item-body"><span class="item-name">Yakhnet batata</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Cubetti di patate saltate in brodo di cipolla e coriandolo · con carne di vitello € 9,00</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d41" data-img="uploads/platos/d41.jpg" data-allerg="vegano"><span class="item-num">41</span>
+                                <div class="item-body"><span class="item-name">Sciorba di adas</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Vellutata di lenticchie scorticate, condita con evo e
+                                        limone</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d42" data-img="uploads/platos/d42.jpg" data-allerg="vegano"><span class="item-num">42</span>
+                                <div class="item-body"><span class="item-name">Sciorba di khoudra</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Minestra di verdure varie di stagione</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d43" data-img="uploads/platos/d43.jpg" data-allerg="glutine|sesamo"><span class="item-num">43</span>
+                                <div class="item-body"><span class="item-name">Shawarma sandwich</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"></span><span class="item-desc">Carne scelta di vitello arrostita con salsa tahina, cipolla, prezzemolo, pomodoro e sottaceti</span></div><span class="item-price">€ 9,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d44" data-img="uploads/platos/d44.jpg" data-allerg="glutine|sesamo|vegano"><span class="item-num">44</span>
+                                <div class="item-body"><span class="item-name">Falafel sandwich</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Falafel, salsa tahina, crema
+                                        di ceci, pomodoro e sottaceti</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p12 even" data-page="12">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_panini">Panini</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d45" data-allerg="glutine|latte|sesamo|senape"><span class="item-num">45</span>
+                                <div class="item-body"><span class="item-name">Sandwich d'arrosto di pollo</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/senape.png" alt="Senape" data-i18n-alt="alg_senape" loading="lazy" decoding="async"></span><span class="item-desc">Arrosto di pollo speziato, sottaceti, patatine, pomodoro, misto salse</span></div><span class="item-price">€ 9,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d45v2" data-allerg="glutine|latte|senape"><span class="item-num"></span>
+                                <div class="item-body"><span class="item-name">Versione Fajita</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/senape.png" alt="Senape" data-i18n-alt="alg_senape" loading="lazy" decoding="async"></span><span class="item-desc">Peperoni rossi, cipolla, mozzarella, mais, sottaceti, misto salse</span></div><span class="item-price">€ 10,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d46" data-allerg="glutine|latte|senape"><span class="item-num">46</span>
+                                <div class="item-body"><span class="item-name">Sandwich di pollo crispy</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/senape.png" alt="Senape" data-i18n-alt="alg_senape" loading="lazy" decoding="async"></span><span class="item-desc">Pollo fritto speziato, patatine, sottaceti, misto salse</span></div><span class="item-price">€ 9,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d47" data-img="uploads/platos/d47.jpg" data-allerg="glutine|latte|senape"><span class="item-num">47</span>
+                                <div class="item-body"><span class="item-name">Panino hamburger</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/senape.png" alt="Senape" data-i18n-alt="alg_senape" loading="lazy" decoding="async"></span><span class="item-desc">Hamburger, cheddar a scelta, pomodoro, sottaceti, lattuga, salsa a scelta</span></div><span class="item-price">€ 9,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d48" data-img="uploads/platos/d48.jpg" data-allerg="glutine|senape"><span class="item-num">48</span>
+                                <div class="item-body"><span class="item-name">Panino hamburger di pollo</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/senape.png" alt="Senape" data-i18n-alt="alg_senape" loading="lazy" decoding="async"></span><span class="item-desc">Hamburger di pollo grigliato con lattuga, pomodoro, sottaceti, salsa a scelta</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p13 odd" data-page="13">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_menu_degustazione">Menu degustazione</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d49" data-img="uploads/platos/d49.jpg" data-allerg="glutine|latte|uovo|sesamo|frutta-a-guscio"><span class="item-num">49</span>
+                                <div class="item-body"><span class="item-name">Menu Cedro 1 pers.</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/uovo.png" alt="Uovo" data-i18n-alt="alg_uovo" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Sei antipasti freddi a base di verdure · tre antipasti caldi a base di carne · mix mashaoui con insalata fattoush · dessert in monoporzione · caffè arabo o espresso</span></div><span class="item-price">€ 45,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d50" data-img="uploads/platos/d50.jpg" data-allerg="glutine|latte|uovo|sesamo|frutta-a-guscio"><span class="item-num">50</span>
+                                <div class="item-body"><span class="item-name">Cedro vegetariano 1 pers.</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/uovo.png" alt="Uovo" data-i18n-alt="alg_uovo" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Sei antipasti freddi a base di verdure · tre antipasti caldi a base di formaggio, verdure e legumi · mjaddara e insalata · dessert in monoporzione · caffè arabo o espresso</span></div><span class="item-price">€
+                                    35,00</span>
+                            </div>
+                    <h3 class="list-cat"><i class="fa-solid fa-bread-slice cat-icon"></i><span data-i18n="cat_pane_manakish">Pane e manakish</span></h3>
+                    <div class="list-item has-allerg" data-key="d51" data-img="uploads/platos/d51.jpg" data-allerg="glutine|vegano"><span class="item-num">51</span>
+                                <div class="item-body"><span class="item-name">Pane nostrano 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Pane arabo
+                                        fresco della casa</span></div><span class="item-price">€ 3,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d52" data-img="uploads/platos/d52.jpg" data-allerg="glutine|sesamo|vegano"><span class="item-num">52</span>
+                                <div class="item-body"><span class="item-name">Manqoushe zaatar</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Focaccia nostrana con misto
+                                        di erbe montanare aromatiche (timo e origano), sesamo e olio evo</span></div>
+                                <span class="item-price">€ 6,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p14 even" data-page="14">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_pane_manakish">Pane e manakish</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d53" data-img="uploads/platos/d53.jpg" data-allerg="glutine|latte"><span class="item-num">53</span>
+                                <div class="item-body"><span class="item-name">Manqoushe jibne</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Focaccia
+                                        nostrana con formaggio fresco libanese</span></div><span class="item-price">€
+                                    7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d54" data-img="uploads/platos/d54.jpg" data-allerg="glutine"><span class="item-num">54</span>
+                                <div class="item-body"><span class="item-name">Lahme baajin</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"></span><span class="item-desc">Focaccia nostrana con trita di agnello e vitello, cipolla e pomodoro</span></div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <h3 class="list-cat"><i class="fa-solid fa-cookie-bite cat-icon"></i><span data-i18n="cat_sfoglie">Sfoglie</span></h3>
+                    <div class="list-item has-allerg" data-key="d55" data-img="uploads/platos/d55.jpg" data-allerg="glutine|latte"><span class="item-num">55</span>
+                                <div class="item-body"><span class="item-name">Mouajanat 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Tre tipi di focaccine nostrane con una tazza di tè caldo · senza tè € 8,00</span></div><span class="item-price">€ 10,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d56" data-img="uploads/platos/d56.jpg" data-allerg="glutine|vegano"><span class="item-num">56</span>
+                                <div class="item-body"><span class="item-name">Fatayer sabanekh 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Fagottini ripieni di spinaci, cipolla e mosto di melograno</span></div><span class="item-price">€ 6,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d57" data-img="uploads/platos/d57.jpg" data-allerg="glutine"><span class="item-num">57</span>
+                                <div class="item-body"><span class="item-name">Sfiha baalbekieh 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"></span><span class="item-desc">Focaccina di forma particolare con carne trita e cipolla</span></div><span class="item-price">€ 7,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p15 odd" data-page="15">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_dolci">Dolci</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d58" data-img="uploads/platos/d58.jpg" data-allerg="glutine|uovo|frutta-a-guscio"><span class="item-num">58</span>
+                                <div class="item-body"><span class="item-name">Baqlaua 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/uovo.png" alt="Uovo" data-i18n-alt="alg_uovo" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Pasta sfoglia farcita con pistacchio o pinoli</span></div>
+                                <span class="item-price">€ 6,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d59" data-img="uploads/platos/d59.jpg" data-allerg="glutine|latte"><span class="item-num">59</span>
+                                <div class="item-body"><span class="item-name">Knefe di semolina</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc">Pastella a
+                                        base di semolina stesa a strato con un fondo di formaggio fresco nostrano</span>
+                                </div><span class="item-price">€ 8,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d60" data-img="uploads/platos/d60.jpg" data-allerg="glutine|latte|frutta-a-guscio"><span class="item-num">60</span>
+                                <div class="item-body"><span class="item-name">Maamoul 3 pz</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Pasta frolla farcita con noci, pistacchio o datteri (dolce di festività)</span></div><span class="item-price">€ 6,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d61" data-img="uploads/platos/d61.jpg" data-allerg="glutine|latte|frutta-a-guscio"><span class="item-num">61</span>
+                                <div class="item-body"><span class="item-name">Mhallabiye</span><span class="item-allergens"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Cremina di latte e estratto di frumento con una nota di acqua
+                                        di fior d'arancio o di rose e granella di pistacchio</span></div><span class="item-price">€ 6,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d62" data-img="uploads/platos/d62.jpg" data-allerg="frutta-a-guscio|vegano"><span class="item-num">62</span>
+                                <div class="item-body"><span class="item-name">Cocktail di frutta fresca</span><span class="item-allergens"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Con frutta secca</span></div><span class="item-price">€
+                                    10,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p16 even" data-page="16">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_bevande_calde">Bevande · Calde</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d63" data-allerg="vegano"><span class="item-num">63</span>
+                                <div class="item-body"><span class="item-name">Tè verde con menta</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    3,50</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d64" data-allerg="vegano"><span class="item-num">64</span>
+                                <div class="item-body"><span class="item-name">Tè rosso con salvia</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    3,50</span>
+                            </div>
+                    <div class="list-item" data-key="d65"><span class="item-num">65</span>
+                                <div class="item-body"><span class="item-name">Infuso di menta fresca e
+                                        miele</span><span class="item-desc" style="display:none"></span></div><span class="item-price">€ 3,50</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d66" data-allerg="vegano"><span class="item-num">66</span>
+                                <div class="item-body"><span class="item-name">Infuso di zenzero e lime</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    3,50</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d67" data-allerg="frutta-a-guscio|vegano"><span class="item-num">67</span>
+                                <div class="item-body"><span class="item-name">Zhourat</span><span class="item-allergens"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Infuso di erbe selvatiche</span></div><span class="item-price">€ 4,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d68" data-allerg="vegano"><span class="item-num">68</span>
+                                <div class="item-body"><span class="item-name">Karkadeh</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Infuso di fior d'ibisco</span></div><span class="item-price">€
+                                    3,50</span>
+                            </div>
+                <h3 class="list-cat"><i class="fa-solid fa-mug-hot cat-icon"></i><span data-i18n="cat_caffe">Caffè</span></h3>
+                    <div class="list-item has-allerg" data-key="d69" data-allerg="vegano"><span class="item-num">69</span>
+                                <div class="item-body"><span class="item-name">Caffè espresso</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    2,50</span>
+                            </div>
+<div class="list-item has-allerg" data-key="d70" data-allerg="vegano"><span class="item-num">70</span>
+                                <div class="item-body"><span class="item-name">Caffè arabo</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    3,50</span>
+                            </div>
+<div class="list-item has-allerg" data-key="d71" data-allerg="latte"><span class="item-num">71</span>
+                                <div class="item-body"><span class="item-name">Cappuccino</span><span class="item-allergens"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    3,50</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p17 odd" data-page="17">
+            <div class="page-content page-list">
+                <div class="page-header" data-i18n="hdr_bevande_fredde">Bevande · Fredde</div>
+                <div class="list-section">
+                    <div class="list-item has-allerg" data-key="d72" data-allerg="vegano"><span class="item-num">72</span>
+                                <div class="item-body"><span class="item-name">Redbull</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    4,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d73" data-allerg="vegano"><span class="item-num">73</span>
+                                <div class="item-body"><span class="item-name">Bibita in vetro</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    5,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d74" data-allerg="vegano"><span class="item-num">74</span>
+                                <div class="item-body"><span class="item-name">Acqua da 1 litro</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    4,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d75" data-allerg="vegano"><span class="item-num">75</span>
+                                <div class="item-body"><span class="item-name">Spremuta</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    7,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d76" data-allerg="vegano"><span class="item-num">76</span>
+                                <div class="item-body"><span class="item-name">Limone menta</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc">Oppure limonadha</span></div><span class="item-price">€
+                                    6,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d77" data-allerg="frutta-a-guscio"><span class="item-num">77</span>
+                                <div class="item-body"><span class="item-name">Avocado e miele con frutta
+                                        secca</span><span class="item-allergens"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"></span><span class="item-desc">Con frutta secca</span></div><span class="item-price">€
+                                    12,00</span>
+                            </div>
+                    <div class="list-item has-allerg" data-key="d78" data-allerg="vegano"><span class="item-num">78</span>
+                                <div class="item-body"><span class="item-name">Karkadeh fresco ghiacciato</span><span class="item-allergens"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"></span><span class="item-desc" style="display:none"></span></div><span class="item-price">€
+                                    5,00</span>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p18 even page-scaled" data-page="18">
+                    <div class="page-content page-list">
+                        <div class="page-header" data-i18n="hdr_info">Informazioni</div>
+                        <div class="list-section" style="gap:0.55em;padding:0.5em 0.35rem 0.3rem;">
+                            <div style="display:flex;flex-direction:column;gap:0.19em;font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.97em;color:rgba(46,38,30,0.85);">
+                                <span style="font-family:'Playfair Display',serif;font-size:0.62em;letter-spacing:0.3em;text-transform:uppercase;color:rgba(140,118,96,0.9);" data-i18n="ui_contatti">Contatti</span>
+                                <span><i class="fa-solid fa-location-dot" style="color:#c4a882;width:1.1em;"></i>Corso
+                                    Lodi 74 &middot; 20139 Milano</span>
+                                <span><i class="fa-solid fa-phone" style="color:#c4a882;width:1.1em;"></i><a href="tel:+390212345678" style="color:inherit;text-decoration:none;">+39 02 1234
+                                        5678</a></span>
+                                <span><i class="fa-solid fa-envelope" style="color:#c4a882;width:1.1em;"></i><a href="mailto:info@alarz.it" style="color:inherit;text-decoration:none;">info@alarz.it</a></span>
+                                <span><i class="fa-solid fa-globe" style="color:#c4a882;width:1.1em;"></i><a href="https://ristorantecedro.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">ristorantecedro.com</a></span>
+                            </div>
+
+                            <div style="width:46px;height:1px;background:#c4a882;margin:0.35rem auto;opacity:0.45;">
+                            </div>
+
+                            <div style="display:flex;flex-direction:column;gap:0.1rem;">
+                                <span style="font-family:'Playfair Display',serif;font-size:0.62em;letter-spacing:0.3em;text-transform:uppercase;color:rgba(140,118,96,0.9);margin-bottom:0.15rem;" data-i18n="ui_orari">Orari di apertura</span>
+                                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;padding:0.09em 0;border-bottom:1px solid rgba(196,168,130,0.14);font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.94em;color:rgba(46,38,30,0.82);">
+                                    <span style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.86em;" data-i18n="wd_1">Lunedì</span><span style="color:rgba(46,38,30,0.62);font-style:italic;"><span style="opacity:0.55;font-style:italic;" data-i18n="ui_chiuso">Chiuso</span></span>
+                                </div>
+                                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;padding:0.09em 0;border-bottom:1px solid rgba(196,168,130,0.14);font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.94em;color:rgba(46,38,30,0.82);">
+                                    <span style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.86em;" data-i18n="wd_2">Lunedì</span><span style="color:rgba(46,38,30,0.62);font-style:italic;"><span style="white-space:nowrap;">12:30&ndash;15:00</span><span style="opacity:0.45;"> &middot; </span><span style="white-space:nowrap;">19:30&ndash;23:30</span></span>
+                                </div>
+                                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;padding:0.09em 0;border-bottom:1px solid rgba(196,168,130,0.14);font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.94em;color:rgba(46,38,30,0.82);">
+                                    <span style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.86em;" data-i18n="wd_3">Lunedì</span><span style="color:rgba(46,38,30,0.62);font-style:italic;"><span style="white-space:nowrap;">12:30&ndash;15:00</span><span style="opacity:0.45;"> &middot; </span><span style="white-space:nowrap;">19:30&ndash;23:30</span></span>
+                                </div>
+                                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;padding:0.09em 0;border-bottom:1px solid rgba(196,168,130,0.14);font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.94em;color:rgba(46,38,30,0.82);">
+                                    <span style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.86em;" data-i18n="wd_4">Lunedì</span><span style="color:rgba(46,38,30,0.62);font-style:italic;"><span style="white-space:nowrap;">12:30&ndash;15:00</span><span style="opacity:0.45;"> &middot; </span><span style="white-space:nowrap;">19:30&ndash;23:30</span></span>
+                                </div>
+                                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;padding:0.09em 0;border-bottom:1px solid rgba(196,168,130,0.14);font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.94em;color:rgba(46,38,30,0.82);">
+                                    <span style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.86em;" data-i18n="wd_5">Lunedì</span><span style="color:rgba(46,38,30,0.62);font-style:italic;"><span style="white-space:nowrap;">12:30&ndash;15:00</span><span style="opacity:0.45;"> &middot; </span><span style="white-space:nowrap;">19:30&ndash;23:30</span></span>
+                                </div>
+                                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;padding:0.09em 0;border-bottom:1px solid rgba(196,168,130,0.14);font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.94em;color:rgba(46,38,30,0.82);">
+                                    <span style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.86em;" data-i18n="wd_6">Lunedì</span><span style="color:rgba(46,38,30,0.62);font-style:italic;"><span style="white-space:nowrap;">12:30&ndash;15:30</span><span style="opacity:0.45;"> &middot; </span><span style="white-space:nowrap;">19:30&ndash;24:00</span></span>
+                                </div>
+                                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;padding:0.09em 0;border-bottom:1px solid rgba(196,168,130,0.14);font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.94em;color:rgba(46,38,30,0.82);">
+                                    <span style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.86em;" data-i18n="wd_7">Lunedì</span><span style="color:rgba(46,38,30,0.62);font-style:italic;"><span style="white-space:nowrap;">12:30&ndash;15:30</span><span style="opacity:0.45;"> &middot; </span><span style="white-space:nowrap;">19:30&ndash;23:00</span></span>
+                                </div>
+                            </div>
+
+                            <p style="margin:0.25rem 0 0;font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.79em;font-style:italic;line-height:1.4;color:rgba(46,38,30,0.6);text-align:center;" data-i18n="ui_nota_cucina">La cucina chiude 30 minuti prima dell'orario indicato. Per
+                                prenotazioni dell'ultimo minuto consigliamo di chiamare direttamente.</p>
+
+                            <button type="button" class="allerg-link" data-target="19">
+                                <span data-i18n="ui_legenda">Allergeni e icone</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+
+                            <p style="margin:0.15rem 0 0;font-family:'Cormorant Garamond','Playfair Display',serif;font-size:0.7em;line-height:1.35;color:rgba(120,102,84,0.85);text-align:center;" data-i18n="ui_nota_allergeni">Possibile presenza di allergeni &middot; coperto € 2</p>
+
+                        </div>
+                    </div>
+                </div>
+        <div class="page p19 odd page-scaled" data-page="19">
+                    <div class="page-content page-list">
+                        <div class="page-header" data-i18n="ui_legenda">Allergeni e icone</div>
+                        <div class="list-section" style="justify-content:center;justify-content:safe center;">
+                            <div class="allerg-page-grid">
+                                <div class="allerg-page-item"><img src="uploads/allergeni/glutine.png" alt="Glutine" data-i18n-alt="alg_glutine" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_glutine">Glutine</span><span class="allerg-page-desc" data-i18n="algd_glutine">Pane, pasta, bulgur, sfoglie</span></span></div>
+                                <div class="allerg-page-item"><img src="uploads/allergeni/latte.png" alt="Latte" data-i18n-alt="alg_latte" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_latte">Latte</span><span class="allerg-page-desc" data-i18n="algd_latte">Formaggi, jogurt, burro, panna</span></span></div>
+                                <div class="allerg-page-item"><img src="uploads/allergeni/uovo.png" alt="Uovo" data-i18n-alt="alg_uovo" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_uovo">Uovo</span><span class="allerg-page-desc" data-i18n="algd_uovo">Sfoglie, paste frolle, salse</span></span></div>
+                                <div class="allerg-page-item"><img src="uploads/allergeni/sesamo.png" alt="Sesamo" data-i18n-alt="alg_sesamo" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_sesamo">Sesamo</span><span class="allerg-page-desc" data-i18n="algd_sesamo">Tahina, salsa di sesamo, pane</span></span></div>
+                                <div class="allerg-page-item"><img src="uploads/allergeni/frutta-a-guscio.png" alt="Frutta a guscio" data-i18n-alt="alg_frutta" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_frutta">Frutta a guscio</span><span class="allerg-page-desc" data-i18n="algd_frutta">Noci, mandorle, pistacchio, pinoli</span></span>
+                                </div>
+                                <div class="allerg-page-item"><img src="uploads/allergeni/senape.png" alt="Senape" data-i18n-alt="alg_senape" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_senape">Senape</span><span class="allerg-page-desc" data-i18n="algd_senape">Mostarda, salse, condimenti</span></span></div>
+                                <div class="allerg-page-item"><img src="uploads/allergeni/cipolla.png" alt="Cipolla" data-i18n-alt="alg_cipolla" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_cipolla">Cipolla</span><span class="allerg-page-desc" data-i18n="algd_cipolla">Cipolla fresca e nel brodo</span></span></div>
+                                <div class="allerg-page-item"><img src="uploads/allergeni/vegano.png" alt="Vegano" data-i18n-alt="alg_vegano" loading="lazy" decoding="async"><span class="allerg-page-text"><span class="allerg-page-name" data-i18n="alg_vegano">Vegano</span><span class="allerg-page-desc" data-i18n="algd_vegano">Senza carne, pesce, latte e uova</span></span></div>
+                            </div>
+
+                            <div style="width:46px;height:1px;background:#c4a882;margin:0.6em auto 0.5em;opacity:0.45;">
+                            </div>
+
+                            <p class="allerg-page-nota" data-i18n="ui_legenda_nota">Le icone accanto al nome indicano
+                                allergeni e scelte di dieta. Toccando un piatto vedi il dettaglio.</p>
+                            <p class="allerg-page-nota2" data-i18n="ui_nota_allergeni">Possibile presenza di allergeni
+                                &middot; coperto € 2</p>
+                        </div>
+                    </div>
+                </div>
+        <div class="page p20 even" data-page="20">
+                    <div class="page-content page-list blank-page"></div>
+                </div>
+        <div class="page p21 odd" data-page="21">
+                    <div class="page-content has-photo">
+                        <div class="flipbook-photo-layer" style="background:linear-gradient(145deg,#0e0c0a,#1c1510);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.72rem;padding:1.6rem;text-align:center;">
+                            <img src="uploads/logo.png" alt="Ristorante Cedro" style="width:min(168px,58%);filter:drop-shadow(0 14px 44px rgba(0,0,0,0.6));opacity:0.95;">
+                            <div style="width:60px;height:1px;background:linear-gradient(90deg,rgba(196,168,130,0) 0%,rgba(196,168,130,0.8) 50%,rgba(196,168,130,0) 100%);">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:0.8rem;font-family:'Playfair Display',serif;">
+                                <p style="margin:0;font-size:0.62rem;color:#e8dfd5;letter-spacing:0.14em;line-height:1.7;">
+                                    <i class="fa-solid fa-location-dot" style="color:#c4a882;margin-right:0.45rem;"></i>Corso Lodi 74<br><span style="opacity:0.55;">20139 Milano</span>
+                                </p>
+                                <p style="margin:0;font-size:0.62rem;color:#e8dfd5;letter-spacing:0.14em;"><i class="fa-solid fa-phone" style="color:#c4a882;margin-right:0.45rem;"></i>+39 02
+                                    1234 5678</p>
+                                <p style="margin:0;font-size:0.62rem;color:#e8dfd5;letter-spacing:0.14em;line-height:1.7;">
+                                    <i class="fa-solid fa-clock" style="color:#c4a882;margin-right:0.45rem;"></i><span data-i18n="ui_mar_dom">Marted&igrave; &ndash; Domenica</span><br><span style="opacity:0.55;">12:30&ndash;15:00 &middot; 19:30&ndash;23:30</span>
+                                </p>
+                            </div>
+                            <div style="display:flex;gap:1.1rem;">
+                                <a href="https://www.instagram.com/ristorantecedro/" target="_blank" rel="noopener" style="color:#c4a882;font-size:0.68rem;text-decoration:none;letter-spacing:0.12em;font-family:'Playfair Display',serif;"><i class="fa-brands fa-instagram" style="margin-right:0.3rem;"></i>Instagram</a>
+                                <a href="https://www.facebook.com/profile.php?id=61591581745826" target="_blank" rel="noopener" style="color:#c4a882;font-size:0.68rem;text-decoration:none;letter-spacing:0.12em;font-family:'Playfair Display',serif;"><i class="fa-brands fa-facebook-f" style="margin-right:0.3rem;"></i>Facebook</a>
+                            </div>
+                            <div style="width:44px;height:1px;background:#c4a882;margin:0.3rem auto;opacity:0.4;"></div>
+                            <p style="font-family:'Playfair Display',serif;font-size:0.6rem;color:#e8dfd5;opacity:0.55;letter-spacing:0.25em;text-transform:uppercase;" data-i18n="ui_buonappetito">Buon appetito</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /flipbook -->
+
+            <!-- Controlli -->
+            <div class="flipbook-controls">
+                <button class="flipbook-ctrl-btn" id="flipbookCtrlPrev" aria-label="Pagina precedente">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="flipbook-page-indicator" id="flipbookPageIndicator">1 / 21</span>
+                <button class="flipbook-ctrl-btn" id="flipbookCtrlNext" aria-label="Pagina successiva">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal dettaglio piatto -->
+    <div class="dish-modal" id="dishModal" role="dialog" aria-modal="true" aria-label="Dettaglio piatto">
+        <div class="dish-modal-backdrop" id="dishModalBackdrop"></div>
+        <div class="dish-modal-card">
+            <img class="dish-modal-photo" id="dishModalPhoto" alt="" decoding="async">
+            <button class="dish-modal-close" id="dishModalClose" aria-label="Chiudi">✕</button>
+            <div class="dish-modal-num" id="dishModalNum"></div>
+            <div class="dish-modal-name" id="dishModalName"></div>
+            <div class="dish-modal-allergens" id="dishModalAllergens" hidden>
+                <span class="dish-modal-allergens-icons" id="dishModalAllergIcons"></span>
+                <span class="dish-modal-allergens-names" id="dishModalAllergNames"></span>
+            </div>
+            <div class="dish-modal-allerg" id="dishModalAllerg"></div>
+            <div class="dish-modal-divider"></div>
+            <div class="dish-modal-desc" id="dishModalDesc"></div>
+            <div class="dish-modal-footer">
+                <span class="dish-modal-label" data-i18n="ui_price">Prezzo</span>
+                <span class="dish-modal-price" id="dishModalPrice"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Tutorial del comensal (sale solo la primera vez) ===== -->
+    <div class="tour" id="tourOverlay" role="dialog" aria-modal="true" aria-labelledby="tourTitle">
+        <div class="tour-backdrop" id="tourBackdrop"></div>
+        <div class="tour-card">
+            <button class="tour-close" id="tourClose" aria-label="Chiudi">✕</button>
+            <div class="tour-title" id="tourTitle" data-i18n="ui_tour_title">Come si usa il menù</div>
+            <div class="tour-steps">
+                <div class="tour-step">
+                    <span class="tour-ico"><i class="fa-solid fa-hand-pointer"></i></span>
+                    <span class="tour-text" data-i18n="ui_tour_1">Tocca i lati della pagina o scorri il dito per girare</span>
+                </div>
+                <div class="tour-step">
+                    <span class="tour-ico"><i class="fa-solid fa-utensils"></i></span>
+                    <span class="tour-text" data-i18n="ui_tour_2">Tocca un piatto per vedere foto, ingredienti e allergeni</span>
+                </div>
+                <div class="tour-step">
+                    <span class="tour-ico"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="tour-text" data-i18n="ui_tour_3">Tocca la lente per ingrandire la pagina</span>
+                </div>
+            </div>
+            <div class="tour-actions">
+                <button class="tour-btn tour-btn-ghost" id="tourSkip" data-i18n="ui_tour_skip">Salta</button>
+                <button class="tour-btn tour-btn-main" id="tourOk" data-i18n="ui_tour_ok">Ho capito</button>
+            </div>
+            <div class="tour-bar" id="tourBar"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.js?v=17"></script>
+    <script src="js/turn.js?v=17"></script>
+    <script src="js/i18n.js?v=17"></script>
+    <script>
+        (function initFlipbook() {
+            var flipbook = jQuery('.flipbook');
+            if (flipbook.length === 0) { setTimeout(initFlipbook, 500); return; }
+
+            var container = document.querySelector('.flipbook-container');
+
+            /* ── Tamaño ── */
+            /* Alto/ancho REALMENTE visibles: la barra del navegador interno de las
+               apps (lector de QR) no cuenta en window.innerHeight. */
+            function visibleSize() {
+                var vv = window.visualViewport;
+                return {
+                    w: Math.round((vv && vv.width) ? vv.width : window.innerWidth),
+                    h: Math.round((vv && vv.height) ? vv.height : window.innerHeight)
+                };
+            }
+
+            /* "Rayita" inferior del iPhone (safe-area), medida de verdad con una
+               sonda: dentro de otra app puede valer 0 y en Safari 34px. */
+            var safeB = null;
+            function safeAreaBottom() {
+                if (safeB !== null) return safeB;
+                var probe = document.createElement('div');
+                probe.style.cssText = 'position:fixed;left:-9999px;bottom:0;width:1px;height:0;padding-bottom:env(safe-area-inset-bottom, 0px)';
+                document.body.appendChild(probe);
+                safeB = Math.round(probe.getBoundingClientRect().height) || 0;
+                document.body.removeChild(probe);
+                return safeB;
+            }
+
+            /* Reserva inferior: controles + isla de secciones + barra del navegador.
+               Si la web ocupa TODA la pantalla, la app que la aloja dibuja su barra
+               ENCIMA: dejamos un colchón extra para que no tape los controles. */
+            function bottomReserve(vh) {
+                var edgeToEdge = (typeof screen !== 'undefined' && screen.height) ? vh >= screen.height - 20 : false;
+                var base = 176;   // sin título fuera del libro: menos reserva
+                return base + safeAreaBottom() + (edgeToEdge ? 64 : 0);
+            }
+
+            function getSize() {
+                var vs = visibleSize();
+                var vw = vs.w, vh = vs.h;
+                var isPhone = vw <= 768;
+                if (isPhone) {
+                    // Móvil: usar el máximo espacio posible de la pantalla
+                    var reserved = bottomReserve(vh);
+                    var availH = Math.min(820, Math.max(300, vh - reserved));
+                    var pageH = Math.round(availH);
+                    var pageW = Math.round(pageH / 1.38);
+                    // 14px margin each side gives the turn.js fold animation room
+                    var maxW = Math.floor(vw * 0.98 - 28);
+                    if (pageW > maxW) { pageW = maxW; pageH = Math.round(pageW * 1.38); }
+                    return { isPhone: true, pageW: pageW, pageH: pageH };
+                }
+                // Desktop: usar la mayor altura posible (los controles flotan encima)
+                // El título va dentro de la página 2: todo el alto se lo queda el libro
+                var maxDeskH = Math.min(690, Math.max(340, vh - 212));
+                var deskW = Math.min(500, Math.max(340, Math.floor((vw - 120) / 2)));
+                var deskH = Math.min(maxDeskH, Math.round(deskW * 1.38));
+                deskW = Math.round(deskH / 1.38);
+                return { isPhone: false, pageW: deskW, pageH: deskH };
+            }
+
+            function applySize(s) {
+                container.style.setProperty('--fb-w', (s.isPhone ? s.pageW : s.pageW * 2) + 'px');
+            }
+
+            /* Ajuste fino: si aun así algo queda por debajo del área visible (barra
+               de la app, teclado…) se encoge el libro justo lo que sobra. */
+            function fitToViewport(s) {
+                if (!s.isPhone) return false;
+                var ctrls = document.querySelector('.flipbook-controls');
+                if (!ctrls) return false;
+                var over = Math.ceil(ctrls.getBoundingClientRect().bottom - (visibleSize().h - 6));
+                if (over <= 1) return false;
+                var newH = Math.max(260, s.pageH - over);
+                if (s.pageH - newH < 2) return false;
+                s.pageH = newH;
+                s.pageW = Math.round(newH / 1.38);
+                var maxW = Math.floor(visibleSize().w * 0.98 - 28);
+                if (s.pageW > maxW) { s.pageW = maxW; s.pageH = Math.round(maxW * 1.38); }
+                return true;
+            }
+
+            /* Tamaño + ajuste fino + reencuadre, siempre en este orden */
+            function sizeBook(s) {
+                applySize(s);
+                flipbook.turn('size', s.isPhone ? s.pageW : s.pageW * 2, s.pageH);
+                if (fitToViewport(s)) {
+                    applySize(s);
+                    flipbook.turn('size', s.isPhone ? s.pageW : s.pageW * 2, s.pageH);
+                }
+                flipbook.turn('center');
+            }
+
+            // Mide la altura real de cada página: el libro nunca es más bajo
+            // que la página más alta, así nada se corta jamás.
+            function tallestPage() {
+                var maxH = 0;
+                jQuery('.page-content').each(function () {
+                    var h = this.scrollHeight || 0;
+                    if (h > maxH) maxH = h;
+                });
+                return maxH;
+            }
+
+            function init() {
+                var s = getSize();
+                applySize(s);
+                flipbook.turn({
+                    width: s.isPhone ? s.pageW : s.pageW * 2,
+                    height: s.pageH,
+                    duration: 350,
+                    gradients: true,
+                    acceleration: true,
+                    display: s.isPhone ? 'single' : 'double',
+                    autoCenter: true,
+                    elevation: 50,
+                    cornerSize: 0   // disables click/tap on page sides; swipe still works
+                });
+                // Red de seguridad: agrandar el libro si alguna página no cabía
+                var need = tallestPage();
+                if (need > s.pageH) {
+                    s.pageH = need;
+                    s.pageW = Math.round(need / 1.38);
+                    var maxW = s.isPhone ? Math.floor(visibleSize().w * 0.98 - 28) : 500;
+                    if (s.pageW > maxW) { s.pageW = maxW; s.pageH = Math.round(maxW * 1.38); }
+                    if (!s.isPhone && s.pageW < 340) { s.pageW = 340; s.pageH = Math.round(340 * 1.38); }
+                }
+                // Encaja el libro en el alto REALMENTE visible (barra de la app incluida)
+                sizeBook(s);
+            }
+
+            init();
+
+            /* ── Controles manuales ── */
+            jQuery('#flipbookCtrlPrev').on('click', function () { navTarget = null; resetFlipDuration(); flipbook.turn('previous'); });
+            jQuery('#flipbookCtrlNext').on('click', function () { navTarget = null; resetFlipDuration(); flipbook.turn('next'); });
+
+            // Para las zonas de paso de página (js/turnzones.js): deja el estado
+            // de navegación limpio antes de girar, igual que hacen los botones ◀ ▶.
+            window.resetMenuNav = function () { navTarget = null; resetFlipDuration(); };
+            jQuery(document).on('keydown', function (e) {
+                if (e.keyCode === 37) { navTarget = null; resetFlipDuration(); flipbook.turn('previous'); }
+                if (e.keyCode === 39) { navTarget = null; resetFlipDuration(); flipbook.turn('next'); }
+            });
+
+            /* ── Indicador ── */
+            function updateIndicator() {
+                jQuery('#flipbookPageIndicator').text(flipbook.turn('page') + ' / ' + flipbook.turn('pages'));
+            }
+
+            /* ── Island activo ── */
+            function updateIsland(page) {
+                jQuery('.island-btn').each(function (i, el) {
+                    var $el = jQuery(el);
+                    var from = parseInt($el.data('target'));
+                    var $next = jQuery('.island-btn').eq(i + 1);
+                    var to = $next.length ? parseInt($next.data('target')) - 1 : 9999;
+                    $el.toggleClass('is-active', page >= from && page <= to);
+                });
+            }
+
+            /* ── Navegación por island ── */
+            var navTarget = null;
+
+            /* ── Velocidad del flip: 350 ms paso a paso, rápido al cambiar de sección ── */
+            var FLIP_DUR_NORMAL = 350;   // ◀ ▶ y flechas del teclado
+            var FLIP_DUR_JUMP = 150;     // salto de isla
+            var FLIP_DUR_LONG = 100;     // salto largo (más de 6 hojas)
+            var flipDurActual = FLIP_DUR_NORMAL;
+            function setFlipDuration(ms) {
+                if (flipDurActual === ms) return;
+                flipDurActual = ms;
+                flipbook.turn('options', { duration: ms });
+            }
+            function resetFlipDuration() { setFlipDuration(FLIP_DUR_NORMAL); }
+
+            function flipToPage(target) {
+                var totalPages = flipbook.turn('pages');
+                if (flipbook.turn('display') === 'double' && target > 1 && target < totalPages) {
+                    target = target % 2 === 0 ? target : target - 1;
+                }
+                navTarget = target;
+                var cur = flipbook.turn('page');
+                if (cur === navTarget) { navTarget = null; resetFlipDuration(); return; }
+                // Salto de sección: animación más corta (y aún más en saltos largos)
+                var paso = flipbook.turn('display') === 'double' ? 2 : 1;
+                var hojas = Math.max(1, Math.round(Math.abs(navTarget - cur) / paso));
+                setFlipDuration(hojas > 6 ? FLIP_DUR_LONG : (hojas > 1 ? FLIP_DUR_JUMP : FLIP_DUR_NORMAL));
+                flipbook.turn(navTarget > cur ? 'next' : 'previous');
+            }
+
+            jQuery('.island-btn').on('click', function () {
+                flipToPage(parseInt(jQuery(this).data('target')));
+            });
+
+
+            /* ── turned: actualiza UI + continúa navegación ── */
+            flipbook.on('turned', function () {
+                var page = flipbook.turn('page');
+                updateIndicator();
+                updateIsland(page);
+                var enSalto = navTarget !== null && page !== navTarget;
+                if (navTarget !== null && page === navTarget) {
+                    navTarget = null;
+                    resetFlipDuration();
+                }
+                // Re-traducir al parar (durante el salto lo cubre el observer de i18n):
+                // turn.js re-inserta el HTML original de las páginas que vuelven al DOM.
+                if (!enSalto && window.applyMenuLang && window.currentMenuLang) {
+                    window.applyMenuLang(window.currentMenuLang);
+                }
+                if (navTarget !== null) flipbook.turn(navTarget > page ? 'next' : 'previous');
+            });
+
+            updateIndicator();
+            updateIsland(1);
+
+            /* ── Resize ── */
+            var resizeTimer, lastVisH = 0;
+
+            function relayoutMenu() {
+                var s = getSize();
+                var need = tallestPage();
+                if (need > s.pageH) {
+                    s.pageH = need;
+                    s.pageW = Math.round(need / 1.38);
+                    var maxW = s.isPhone ? Math.floor(visibleSize().w * 0.98 - 28) : 500;
+                    if (s.pageW > maxW) { s.pageW = maxW; s.pageH = Math.round(maxW * 1.38); }
+                    if (!s.isPhone && s.pageW < 340) { s.pageW = 340; s.pageH = Math.round(340 * 1.38); }
+                }
+                flipbook.turn('display', s.isPhone ? 'single' : 'double');
+                sizeBook(s);
+            }
+
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(relayoutMenu, 150);
+            });
+
+            /* La barra de Safari (o de la app del QR) cambia el alto visible sin
+               disparar 'resize': hay que reevaluar el tamaño del libro. */
+            var vvTimer;
+            function onVisibleChange() {
+                var vv = window.visualViewport;
+                if (vv && vv.scale && vv.scale > 1.05) return;          // el usuario está haciendo zoom
+                if (typeof window.zoomIsOpen === 'function' && window.zoomIsOpen()) return;
+                var h = visibleSize().h;
+                if (Math.abs(h - lastVisH) < 24) return;
+                lastVisH = h;
+                relayoutMenu();
+            }
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener('resize', function () {
+                    clearTimeout(vvTimer);
+                    vvTimer = setTimeout(onVisibleChange, 120);
+                });
+                window.visualViewport.addEventListener('scroll', function () {
+                    clearTimeout(vvTimer);
+                    vvTimer = setTimeout(onVisibleChange, 180);
+                });
+            }
+
+            window.reflowMenu = function () {
+                relayoutMenu();
+            };
+
+            /* ── Modal dettaglio piatto ── */
+            var $modal = jQuery('#dishModal');
+
+            function openModal(item) {
+                var $el = jQuery(item);
+                var num = $el.find('.item-num').text().trim();
+                var allerg = $el.find('.item-allerg').text().trim();
+                var price = $el.find('.item-price').text().trim();
+
+                // Traducción directa desde MENU_I18N: el modal muestra SIEMPRE el
+                // idioma actual, aunque la página se acabe de re-insertar.
+                var lang = window.currentMenuLang || 'it';
+                var nameFull = $el.find('.item-name').text().trim();
+                var desc = $el.find('.item-desc').text().trim();
+                var rawKey = $el.attr('data-key') || '';
+                if (rawKey) {
+                    var ta = document.createElement('textarea');
+                    ta.innerHTML = rawKey;
+                    var key = ta.value;
+                    var entry = window.MENU_I18N ? window.MENU_I18N[key] : null;
+                    if (entry) {
+                        if (entry.name && entry.name[lang]) nameFull = entry.name[lang];
+                        if (entry.desc && entry.desc[lang] !== undefined) desc = entry.desc[lang];
+                    }
+                }
+
+                jQuery('#dishModalNum').text(num ? '№ ' + num : '');
+                jQuery('#dishModalName').text(nameFull);
+                var alergLabel = (window.UI_I18N && window.UI_I18N.ui_allergeni && window.UI_I18N.ui_allergeni[lang]) || 'Allergeni';
+                if (allerg) {
+                    jQuery('#dishModalAllerg').text(alergLabel + ' ' + allerg).show();
+                } else {
+                    jQuery('#dishModalAllerg').text('').hide();
+                }
+                jQuery('#dishModalDesc').text(desc);
+                jQuery('#dishModalPrice').text(price || '—');
+
+                // Iconos de alérgenos y dieta (se copian de la fila del menú,
+                // así ya llevan el idioma que está activo en ese momento).
+                var $algIcons = $el.find('.item-allergens').first();
+                var $algBox = jQuery('#dishModalAllergens');
+                if ($algIcons.length) {
+                    jQuery('#dishModalAllergIcons').html($algIcons.html());
+                    $algBox.removeAttr('hidden');
+                } else {
+                    jQuery('#dishModalAllergIcons').empty();
+                    $algBox.attr('hidden', 'hidden');
+                }
+                refreshDishAllergenNames();
+
+                // Foto del plato (si existe): se carga al abrir el detalle.
+                var $photo = jQuery('#dishModalPhoto');
+                var img = $el.attr('data-img');
+                if (img) {
+                    $photo.attr('src', img).attr('alt', nameFull).addClass('is-visible');
+                } else {
+                    $photo.removeAttr('src').removeClass('is-visible');
+                }
+
+                $modal.addClass('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                $modal.removeClass('is-open');
+                document.body.style.overflow = '';
+            }
+
+            jQuery(document).on('click', '.list-item', function (e) {
+                e.stopPropagation(); // prevent event from reaching turn.js
+                openModal(this);
+            });
+
+            jQuery('#dishModalClose, #dishModalBackdrop').on('click', closeModal);
+
+            jQuery(document).on('keydown', function (e) {
+                if (e.keyCode === 27) closeModal();
+            });
+
+            // Referencia global para la lupa (misma API que el flipbook original)
+            window.cedroFlip = flipbook;
+
+
+            /* ── Fotos de los platos: solo en el detalle (nunca en el libro) ── */
+            var _fotosVistas = {};
+
+            function preloadPagePhotos() {
+                var vista = flipbook.turn('view') || [];
+                for (var i = 0; i < vista.length; i++) {
+                    if (!vista[i]) continue;
+                    var $pag = jQuery('.page[data-page="' + vista[i] + '"]');
+                    $pag.find('.list-item[data-img]').each(function () {
+                        var src = jQuery(this).attr('data-img');
+                        if (src && !_fotosVistas[src]) {
+                            _fotosVistas[src] = true;
+                            var im = new Image();
+                            im.src = src;
+                        }
+                    });
+                }
+            }
+
+            flipbook.on('turned', function () { setTimeout(preloadPagePhotos, 80); });
+            setTimeout(preloadPagePhotos, 1200);
+
+            /* Enlace "Allergeni" de la página de información -> página de alérgenos (19) */
+            jQuery(document).on('click', '.allerg-link', function (e) {
+                e.stopPropagation();
+                flipToPage(parseInt(jQuery(this).attr('data-target'), 10) || 19);
+            });
+
+            /* ── Nombres escritos de los alérgenos en el detalle del plato ──
+               Los iconos llevan el nombre en alt/title (traducido); aquí se
+               escriben en texto para que se entiendan sin saber el dibujo. */
+            function refreshDishAllergenNames() {
+                var out = [];
+                jQuery('#dishModalAllergIcons img').each(function () {
+                    var t = jQuery(this).attr('alt') || '';
+                    if (t) out.push(t);
+                });
+                jQuery('#dishModalAllergNames').text(out.join(' · '));
+            }
+            window.refreshDishAllergenNames = refreshDishAllergenNames;
+        })();
+    </script>
+
+    <!-- ===== LUPA: botón y capa de zoom (capa superpuesta, no toca el flipbook) ===== -->
+    <button id="btnZoom" onclick="openPageZoom()" title="Ingrandisci la pagina" aria-label="Ingrandisci la pagina"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button id="btnTour" onclick="openTour()" title="Come si usa il menù" aria-label="Come si usa il menù"><i class="fa-regular fa-circle-question"></i></button>
+    <div id="zoomOverlay" aria-hidden="true">
+        <div id="zoomStage">
+            <div id="zoomImg"></div>
+        </div>
+        <button class="zoom-close" id="zoomClose" onclick="closeZoomOverlay()" aria-label="Chiudi zoom"><i class="fa-solid fa-xmark"></i></button>
+        <div class="zoom-controls">
+            <button class="zoom-ctrl" id="zoomOutBtn" aria-label="Riduci"><i class="fa-solid fa-minus"></i></button>
+            <span id="zoomLevel">100%</span>
+            <button class="zoom-ctrl" id="zoomInBtn" aria-label="Ingrandisci"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div id="zoomHint"><i class="fa-solid fa-lightbulb"></i> Tocca la lente <i class="fa-solid fa-magnifying-glass"></i>
+        per ingrandire la pagina</div>
+    <script src="js/zoom.js?v=17"></script>
+    <script src="js/tour.js?v=17"></script>
+    <script src="js/turnzones.js?v=17"></script>
+    <script src="js/main.js?v=17"></script>
+
+</body>
+
+</html>

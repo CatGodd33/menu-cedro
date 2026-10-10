@@ -1,0 +1,351 @@
+/* ════════════════════════════════════════════════════════
+   LECTOR — Tutorial para el comensal y zonas de paso de página
+   No toca el contenido de las páginas: solo añade pistas.
+   ════════════════════════════════════════════════════════ */
+
+/* ── Zonas de paso: PISTA visual. El toque lo gestiona js/turnzones.js,
+      así nunca le roba el clic a un plato. ── */
+.turn-zone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(30px, 6.2%, 52px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.turn-zone.zone-prev {
+    left: 0;
+}
+
+.turn-zone.zone-next {
+    right: 0;
+}
+
+.turn-zone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(196, 168, 130, 0.16), rgba(196, 168, 130, 0));
+}
+
+.turn-zone.zone-next::before {
+    background: linear-gradient(270deg, rgba(196, 168, 130, 0.16), rgba(196, 168, 130, 0));
+}
+
+/* Flechita ‹ › */
+.turn-zone::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-style: solid;
+    border-width: 0 1.4px 1.4px 0;
+    border-color: rgba(150, 122, 88, 0.5);
+}
+
+.turn-zone.zone-prev::after {
+    left: 10px;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.turn-zone.zone-next::after {
+    right: 10px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* En doble página la cara interior (el lomo) no lleva pista */
+#flipbook .page.face-left .turn-zone.zone-next,
+#flipbook .page.face-right .turn-zone.zone-prev {
+    display: none;
+}
+
+/* Árabe (RTL): los lados se intercambian */
+html[dir="rtl"] .turn-zone.zone-prev {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .turn-zone.zone-next {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .turn-zone.zone-prev::before {
+    background: linear-gradient(270deg, rgba(196, 168, 130, 0.16), rgba(196, 168, 130, 0));
+}
+
+html[dir="rtl"] .turn-zone.zone-next::before {
+    background: linear-gradient(90deg, rgba(196, 168, 130, 0.16), rgba(196, 168, 130, 0));
+}
+
+html[dir="rtl"] .turn-zone.zone-prev::after {
+    left: auto;
+    right: 10px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+html[dir="rtl"] .turn-zone.zone-next::after {
+    right: auto;
+    left: 10px;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+/* ── Tutorial: botón «?» junto a la lupa ── */
+#btnTour {
+    position: fixed;
+    bottom: calc(22px + var(--safe-b));
+    right: 70px;
+    z-index: 599;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    border: 1.5px solid rgba(196, 168, 130, .35);
+    color: rgba(255, 255, 255, .9);
+    font-size: 1.1rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background .25s, border-color .25s, color .25s;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#btnTour:hover {
+    background: rgba(196, 168, 130, .12);
+    border-color: rgba(196, 168, 130, .55);
+    color: #c4a882;
+}
+
+@media (max-width: 600px) {
+    #btnTour {
+        bottom: calc(14px + var(--safe-b));
+        right: 62px;
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+    }
+}
+
+/* ── Tutorial: capa con los 3 pasos ── */
+.tour {
+    position: fixed;
+    inset: 0;
+    z-index: 8500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+.tour.open {
+    display: flex;
+}
+
+.tour-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 8, 6, .78);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.tour-card {
+    position: relative;
+    width: min(92vw, 400px);
+    max-height: min(88vh, 620px);
+    overflow-y: auto;
+    background: linear-gradient(160deg, #1d1613, #120e0b);
+    border: 1px solid rgba(196, 168, 130, .28);
+    border-radius: 18px;
+    padding: 1.6rem 1.4rem 1.2rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    color: rgba(250, 245, 238, .9);
+    animation: tourIn .32s ease both;
+}
+
+@keyframes tourIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.tour-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    padding: 6px;
+    background: none;
+    border: none;
+    color: rgba(250, 245, 238, .5);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.tour-close:hover {
+    color: #c4a882;
+}
+
+.tour-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #c4a882;
+    margin-bottom: 1.1rem;
+}
+
+.tour-steps {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.tour-step {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.tour-ico {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(196, 168, 130, .35);
+    background: rgba(196, 168, 130, .08);
+    color: #c4a882;
+    font-size: 1rem;
+}
+
+.tour-text {
+    font-size: 1.08rem;
+    line-height: 1.35;
+}
+
+.tour-actions {
+    display: flex;
+    gap: .6rem;
+    margin-top: 1.3rem;
+}
+
+.tour-btn {
+    flex: 1;
+    padding: .72rem 1rem;
+    border-radius: 999px;
+    font-family: 'Playfair Display', serif;
+    font-size: .8rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .22s, color .22s, border-color .22s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tour-btn-main {
+    background: #c4a882;
+    border: 1px solid #c4a882;
+    color: #1a120c;
+}
+
+.tour-btn-main:hover {
+    background: #d5bb98;
+    border-color: #d5bb98;
+}
+
+.tour-btn-ghost {
+    background: none;
+    border: 1px solid rgba(196, 168, 130, .35);
+    color: rgba(250, 245, 238, .7);
+}
+
+.tour-btn-ghost:hover {
+    border-color: rgba(196, 168, 130, .7);
+    color: #c4a882;
+}
+
+/* Mientras el tutorial está abierto, el aviso de la lupa no estorba */
+body.tour-open #zoomHint {
+    display: none !important;
+}
+
+/* Con el tutorial abierto, las pistas de los bordes no se ven */
+body.tour-open .turn-zone::before,
+body.tour-open .turn-zone::after {
+    opacity: 0;
+}
+
+@media (max-width: 600px) {
+    .tour-card {
+        padding: 1.4rem 1.1rem 1rem;
+    }
+
+    .tour-text {
+        font-size: 1rem;
+    }
+
+    .tour-ico {
+        width: 38px;
+        height: 38px;
+        font-size: .95rem;
+    }
+}
+
+/* ── Los platos no llegan hasta el borde: deja un margen lateral tocable
+      (el plato sigue teniendo prioridad porque está por encima de la zona) ── */
+.page-list .list-section {
+    padding-left: clamp(6px, 2.4%, 16px);
+    padding-right: clamp(6px, 2.4%, 16px);
+}
+
+/* Barra fina que marca cuánto tiempo queda antes de que el tutorial se cierre */
+.tour-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    border-radius: 0 0 18px 18px;
+    background: rgba(196, 168, 130, .16);
+    overflow: hidden;
+}
+
+.tour-bar::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #c4a882;
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+
+.tour-bar.is-run::after {
+    animation: tourBarFill 7s linear forwards;
+}
+
+html[dir="rtl"] .tour-bar::after {
+    transform-origin: right center;
+}
+
+@keyframes tourBarFill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
