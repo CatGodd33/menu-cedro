@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--charcoal);
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* disable double-tap zoom; pinch-to-zoom stays available */
+  touch-action: manipulation;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--charcoal);
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: manipulation;
+}
+
+::selection {
+  background: var(--bamboo);
+  color: var(--ivory);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}

@@ -1,0 +1,31 @@
+:root {
+    --ivory: #FAF8F5;
+    --sand: #E8DFD5;
+    --light-wood: #C4A882;
+    --ink: #2B2B2B;
+    --bamboo: #7B8D6E;
+    --charcoal: #1a1a1e;
+
+    --ivory-translucent: rgba(250, 248, 245, 0.92);
+    --sand-translucent: rgba(232, 223, 213, 0.6);
+    --shadow-zen: 0 24px 48px -12px rgba(43, 43, 43, 0.15);
+    --transition-zen: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Áreas seguras del iPhone (se activan con viewport-fit=cover) */
+    --safe-t: env(safe-area-inset-top, 0px);
+    --safe-r: env(safe-area-inset-right, 0px);
+    --safe-b: env(safe-area-inset-bottom, 0px);
+    --safe-l: env(safe-area-inset-left, 0px);
+
+    --gold: #C5A55A;
+    --gold-subtle: rgba(197, 165, 90, 0.25);
+    --gold-glow: rgba(197, 165, 90, 0.08);
+
+    --font-serif: 'Noto Serif KR', Georgia, serif;
+    --font-sans: 'Gowun Dodum', 'Helvetica Neue', sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-jp: 'Playfair Display', serif;
+    --font-brush: 'Playfair Display', serif;
+    --font-brush-alt: 'Playfair Display', serif;
+}

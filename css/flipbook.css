@@ -1,0 +1,1194 @@
+/* ── Sección ── */
+.flipbook-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--charcoal);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(72px, 9vh, 100px) 0 clamp(20px, 4vh, 40px);
+    overflow-x: hidden;
+}
+
+/* ── Mobile: maximize flipbook space ── */
+@media (max-width: 768px) {
+    .flipbook-section {
+        padding: calc(66px + var(--safe-t)) 0 calc(10px + var(--safe-b));
+        align-items: flex-start;
+        /* section clips anything beyond viewport — allows fold to breathe */
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .flipbook-container {
+        gap: 7px !important;
+        /* 24px horizontal padding gives the turn.js fold animation room */
+        padding: 8px 12px 10px !important;
+        width: calc(var(--fb-w, 400px) + 24px) !important;
+        /* visible so the fold shadow renders in the padding zone */
+        overflow: visible !important;
+    }
+
+    /* let the turn.js fold bleed into the container padding */
+    #flipbook {
+        overflow: visible !important;
+    }
+
+    .flipbook-section .menu-title {
+        font-size: 0.95rem;
+    }
+
+    .section-island {
+        align-self: stretch;
+    }
+
+    .flipbook-ctrl-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.64rem;
+    }
+
+    .flipbook-page-indicator {
+        font-size: 0.72rem;
+    }
+
+    .page-menu {
+        padding: clamp(0.55rem, 1.8vw, 0.8rem);
+    }
+
+    .page-menu .page-header {
+        font-size: clamp(0.54rem, 1.6vw, 0.64rem);
+        padding: 0.48rem 0.75rem;
+        margin: calc(-1 * clamp(0.55rem, 1.8vw, 0.8rem)) calc(-1 * clamp(0.55rem, 1.8vw, 0.8rem)) 0 calc(-1 * clamp(0.55rem, 1.8vw, 0.8rem));
+    }
+
+    .page-menu .cat-title {
+        font-size: clamp(0.52rem, 1.6vw, 0.62rem);
+    }
+
+    .page-menu .menu-row {
+        font-size: clamp(0.6rem, 1.65vw, 0.72rem);
+        gap: 0.48rem;
+        padding: 0.38rem 0;
+    }
+
+    .dish-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 7px;
+    }
+}
+
+/* ── Título y subtítulo ── */
+.flipbook-section .menu-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 4.5vw, 2rem);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-align: center;
+}
+
+.flipbook-section .section-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(0.7rem, 2.5vw, 0.95rem);
+    color: var(--ink);
+    text-align: center;
+    opacity: 0.5;
+    letter-spacing: 0.05em;
+}
+
+/* ── Contenedor ── */
+.flipbook-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(8px, 1.2vw, 14px);
+
+    /* el ancho real del flipbook se calcula en JS y se expone como --fb-w */
+    width: calc(var(--fb-w, 900px) + clamp(24px, 4vw, 72px));
+    max-width: 98vw;
+
+    padding: clamp(10px, 1.6vw, 20px) clamp(10px, 1.6vw, 20px) clamp(10px, 1.4vw, 16px);
+    background: radial-gradient(ellipse at center, #e8e0d5 0%, #d4c9b8 100%);
+    border-radius: clamp(10px, 2vw, 24px);
+    box-shadow: 0 20px 40px rgba(44, 36, 32, 0.2);
+    border: 1px solid rgba(196, 168, 130, 0.2);
+}
+
+/* ── Flipbook ── */
+.flipbook {
+    margin: 0 auto !important;
+    /* cara interior de la tapa: tono oscuro + marca de agua dorada del logo
+       (se ve cuando el libro solo muestra una página: portada y contraportada) */
+    background-color: #0b0906;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
+    /* Cede el control táctil a turn.js, evita que el browser scrollee */
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.flipbook .page {
+    background: #fff;
+    overflow: hidden;
+}
+
+/* ── Contenido de página ── */
+.page-content {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ── Capa de foto (portada / contraportada) ── */
+.flipbook-photo-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-content.has-photo>*:not(.flipbook-photo-layer) {
+    display: none !important;
+}
+
+/* ── Controles ── */
+.flipbook-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 2vw, 12px);
+    width: 100%;
+}
+
+.flipbook-ctrl-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid rgba(196, 168, 130, 0.32);
+    color: rgba(196, 168, 130, 0.55);
+    font-size: 0.68rem;
+    cursor: pointer;
+    transition: border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.flipbook-ctrl-btn:hover,
+.flipbook-ctrl-btn:active {
+    border-color: #c4a882;
+    color: #c4a882;
+    background: rgba(196, 168, 130, 0.1);
+}
+
+.flipbook-page-indicator {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    color: rgba(44, 36, 32, 0.55);
+    min-width: 38px;
+    text-align: center;
+}
+
+/* ── Section Island ── */
+.section-island {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 26, 30, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 999px;
+    padding: 3px;
+    border: 1px solid rgba(196, 168, 130, 0.16);
+    gap: 1px;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.section-island::-webkit-scrollbar {
+    display: none;
+}
+
+.island-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 9px;
+    min-height: 34px;
+    border-radius: 999px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.6rem, 1.8vw, 0.80rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 245, 0.28);
+    white-space: nowrap;
+    transition: background 0.22s ease, color 0.22s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.island-btn:hover {
+    color: rgba(250, 248, 245, 0.6);
+}
+
+.island-btn.is-active {
+    background: rgba(196, 168, 130, 0.22);
+    color: #c4a882;
+}
+
+/* ── turn.js ── */
+#flipbook .turn-page {
+    /* las caras vacías del libro usan el mismo tono que la tapa: sin página blanca */
+    background-color: #0e0c0a !important;
+}
+
+/* ══ Pagine a lista compatta ══ */
+.page-list {
+    background:
+        linear-gradient(150deg, #f5ede2 0%, #ede3d4 55%, #e6dacb 100%);
+    padding: clamp(0.55rem, 1.6vw, 0.85rem);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+/* Sottile cornice interna dorata — come un menù stampato di lusso */
+.page-list::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 0.5px solid rgba(196, 168, 130, 0.22);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-list .page-header {
+    background: rgba(22, 16, 12, 0.86);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(250, 245, 238, 0.82);
+    padding: 0.6rem 1.4rem;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: clamp(0.96rem, 2.5vw, 1.22rem);
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    margin: calc(-1 * clamp(0.7rem, 2.4vw, 1.3rem)) calc(-1 * clamp(0.7rem, 2.4vw, 1.3rem)) 0.5rem calc(-1 * clamp(0.7rem, 2.4vw, 1.3rem));
+}
+
+.page-list .list-section {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.12rem;
+    padding: 0.1rem 0 0.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-list .list-cat {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: clamp(0.96rem, 2.05vw, 1.26rem);
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(140, 118, 96, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(196, 168, 130, 0.3);
+    flex-shrink: 0;
+}
+
+.page-list .list-cat .cat-icon {
+    color: #c4a882;
+    font-size: 0.76em;
+    flex-shrink: 0;
+}
+
+
+/* Todas las páginas del menú usan el MISMO tamaño de letra (el que definen
+   .list-item / .page-list .list-cat más abajo). Las páginas más cargadas
+   (pane/manakish/sfoglie y bebidas) se repartieron en dos páginas cada una
+   en vez de reducir la letra, así ninguna se ve distinta. */
+
+/* ── Item: grid layout — name·price on same row, desc below ── */
+.list-item {
+    display: grid;
+    /* nº · nombre · iconos · precio */
+    grid-template-columns: 1.5em 1fr auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 0.28rem;
+    row-gap: 0.02rem;
+    padding: 0.09rem 0;
+    border-bottom: 1px solid rgba(196, 168, 130, 0.08);
+    font-size: clamp(0.94rem, 2.1vw, 1.18rem);
+    color: #1e1a16;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: opacity 0.14s ease;
+}
+
+.list-item:active {
+    opacity: 0.6;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.item-num {
+    grid-column: 1;
+    grid-row: 1;
+    color: #c4a882;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.8em;
+    align-self: baseline;
+}
+
+/* transparent wrapper — children join the parent grid directly */
+.item-body {
+    display: contents;
+}
+
+.item-name {
+    grid-column: 2;
+    grid-row: 1;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 1.22;
+    letter-spacing: 0.055em;
+    align-self: baseline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #1a1410;
+}
+
+/* ── Iconos de alérgenos / dieta, al lado del nombre ── */
+.item-allergens {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.16em;
+    align-self: center;
+    flex-shrink: 0;
+    padding-left: 0.1em;
+    margin-top: -0.1em;
+}
+
+.item-allergens img {
+    width: 1.06em;
+    height: 1.06em;
+    object-fit: contain;
+    opacity: 0.92;
+}
+
+.item-allerg {
+    font-size: 0.68em;
+    color: rgba(154, 136, 114, 0.48);
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    letter-spacing: 0;
+}
+
+.item-desc {
+    grid-column: 2 / 5;
+    grid-row: 2;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 0.9em;
+    color: rgba(58, 48, 38, 0.42);
+    font-style: italic;
+    line-height: 1.18;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.item-price {
+    grid-column: 4;
+    grid-row: 1;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #a8823c;
+    white-space: nowrap;
+    font-size: 0.9em;
+    font-weight: 500;
+    align-self: baseline;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+    .page-list {
+        padding: clamp(0.45rem, 2vw, 0.7rem);
+    }
+
+    .page-list .page-header {
+        font-size: clamp(0.80rem, 3.6vw, 1.02rem);
+        padding: 0.44rem 0.75rem;
+        margin: calc(-1 * clamp(0.45rem, 2vw, 0.7rem)) calc(-1 * clamp(0.45rem, 2vw, 0.7rem)) 0 calc(-1 * clamp(0.45rem, 2vw, 0.7rem));
+    }
+
+    .page-list .list-cat {
+        font-size: clamp(0.82rem, 3.55vw, 1.08rem);
+        padding-bottom: 0.14rem;
+    }
+
+    .list-item {
+        font-size: clamp(0.86rem, 3.75vw, 1.06rem);
+        padding: 0.07rem 0;
+        column-gap: 0.2rem;
+        row-gap: 0.02rem;
+        grid-template-columns: 1.45em 1fr auto auto;
+    }
+
+
+    /* Todas las páginas llevan el mismo aire entre bloques: ya no hay reglas por
+       número de página (los números cambian cada vez que se reparte el menú). */
+
+    .page-list .list-section {
+        gap: 0.2rem;
+        padding-bottom: 0.35rem;
+    }
+
+
+}
+
+
+/* Pantallas bajas (móvil apaisado o ventanas pequeñas): el texto se ajusta a
+   la altura visible para que ninguna página se corte. */
+@media (max-width: 768px) and (max-height: 620px) {
+    .list-item {
+        font-size: clamp(0.62rem, 2.00vh, 0.94rem);
+    }
+
+    .page-list .list-cat {
+        font-size: clamp(0.60rem, 2.05vh, 0.92rem);
+    }
+
+    /* Un poco menos de aire entre fichas: en pantallas muy bajas la página de
+       bebidas (ahora con 9 fichas: calde + caffè) se quedaba a 4 px de cortarse. */
+    .page-list .list-section {
+        gap: 0.14rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .list-item {
+        font-size: clamp(0.80rem, 3.5vw, 1.00rem);
+        padding: 0.06rem 0;
+        column-gap: 0.18rem;
+    }
+
+    .page-list .list-section {
+        gap: 0.12rem;
+    }
+}
+
+/* ── Páginas de contenido del menú ── */
+.page-menu {
+    background: linear-gradient(150deg, #f3ebe0 0%, #ece1d2 55%, #e5d9c8 100%);
+    padding: clamp(0.7rem, 2.4vw, 1.3rem);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Cabecera: banda oscura glass full-ancho */
+.page-menu .page-header {
+    background: rgba(28, 22, 18, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(250, 248, 245, 0.7);
+    padding: 0.65rem 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.62rem, 2vw, 0.74rem);
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin: calc(-1 * clamp(0.7rem, 2.4vw, 1.3rem)) calc(-1 * clamp(0.7rem, 2.4vw, 1.3rem)) 0 calc(-1 * clamp(0.7rem, 2.4vw, 1.3rem));
+}
+
+/* Categoría — espacio uniforme entre título y tarjetas */
+.page-menu .menu-cat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.35rem 0;
+}
+
+.page-menu .cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.62rem, 1.9vw, 0.72rem);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(154, 136, 114, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-bottom: 0.28rem;
+    border-bottom: 1px solid rgba(196, 168, 130, 0.28);
+}
+
+.cat-icon {
+    color: #c4a882;
+    font-size: 0.78em;
+    flex-shrink: 0;
+    width: 1.1em;
+    text-align: center;
+}
+
+/* Fila de plato — estilo libro, sin card */
+.page-menu .menu-row {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.48rem 0;
+    border-bottom: 1px solid rgba(196, 168, 130, 0.14);
+    font-size: clamp(0.7rem, 1.85vw, 0.8rem);
+    color: #2b2b2b;
+}
+
+.page-menu .menu-row:last-child {
+    border-bottom: none;
+}
+
+.dish-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 9px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #d8cfc4;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+.dish-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.22em;
+    min-width: 0;
+}
+
+.dish-name {
+    font-weight: 300;
+    line-height: 1.25;
+    color: #2b2b2b;
+}
+
+.page-menu .menu-row .price {
+    color: #c4a882;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9em;
+    letter-spacing: 0.02em;
+}
+
+/* ══ Modal dettaglio piatto ══ */
+.dish-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+}
+
+.dish-modal.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.dish-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 8, 6, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.dish-modal-card {
+    position: relative;
+    background: linear-gradient(145deg, #f6f0e8 0%, #ede4d5 60%, #e6dac8 100%);
+    /* medidas del relleno en variables: la foto del plato ocupa justo los bordes */
+    --dm-px: 1.75rem;
+    --dm-pt: 2rem;
+    --dm-pb: 1.75rem;
+    --dm-r: 16px;
+    border-radius: var(--dm-r);
+    padding: var(--dm-pt) var(--dm-px) var(--dm-pb);
+    max-width: 560px;
+    width: 100%;
+    max-height: min(92vh, 820px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow:
+        0 24px 64px rgba(0, 0, 0, 0.38),
+        0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    transform: scale(0.9) translateY(16px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.5, 0.64, 1);
+}
+
+.dish-modal.is-open .dish-modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.dish-modal-close {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: rgba(154, 136, 114, 0.65);
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.15s, color 0.15s;
+}
+
+.dish-modal-close:hover {
+    background: rgba(196, 168, 130, 0.15);
+    color: #c4a882;
+}
+
+/* ── Foto del plato: solo dentro del detalle, nunca en el libro ── */
+.dish-modal-photo {
+    display: none;
+    /* ocupa todo el ancho de la tarjeta (el reset limita las img a 100%) */
+    width: calc(100% + 2 * var(--dm-px));
+    max-width: none;
+    margin: calc(-1 * var(--dm-pt)) calc(-1 * var(--dm-px)) 1.1rem;
+    /* cuadrada como el original: casi sin recorte, y se recorta sola si la
+       pantalla es baja (el modal hace scroll dentro de la tarjeta) */
+    aspect-ratio: 1 / 1;
+    max-height: min(46vh, 430px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--dm-r) var(--dm-r) 0 0;
+    background: rgba(196, 168, 130, 0.18);
+}
+
+.dish-modal-photo.is-visible {
+    display: block;
+}
+
+/* con foto de fondo, la equis necesita contraste propio */
+.dish-modal-photo.is-visible~.dish-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(12, 10, 8, 0.42);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.dish-modal-photo.is-visible~.dish-modal-close:hover {
+    color: #fff;
+    background: rgba(12, 10, 8, 0.62);
+}
+
+.dish-modal-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(196, 168, 130, 0.75);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+}
+
+.dish-modal-name {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #18130e;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.2rem;
+}
+
+.dish-modal-allerg {
+    font-size: 0.7rem;
+    color: rgba(130, 114, 94, 0.62);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.85rem;
+}
+
+.dish-modal-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(196, 168, 130, 0.45), transparent);
+    margin-bottom: 0.85rem;
+}
+
+.dish-modal-desc {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 0.98rem;
+    color: rgba(50, 42, 34, 0.62);
+    font-style: italic;
+    line-height: 1.62;
+    margin-bottom: 1.25rem;
+    min-height: 1.4em;
+}
+
+.dish-modal-desc:empty::before {
+    content: '—';
+    opacity: 0.35;
+}
+
+.dish-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dish-modal-label {
+    font-size: 0.62rem;
+    color: rgba(154, 136, 114, 0.55);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.dish-modal-price {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #b8925e;
+    font-size: 1.45rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 480px) {
+    .dish-modal {
+        padding: 1rem;
+    }
+
+    .dish-modal-card {
+        --dm-px: 1.4rem;
+        --dm-pt: 1.6rem;
+        --dm-pb: 1.4rem;
+        --dm-r: 14px;
+    }
+
+    .dish-modal-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* ══ Controles fijos al fondo (siempre visibles) ══ */
+.flipbook-controls {
+    position: sticky;
+    bottom: calc(0.9rem + var(--safe-b));
+    z-index: 60;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.28rem 0.8rem;
+    background: rgba(26, 26, 30, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(196, 168, 130, 0.18);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.flipbook-controls .flipbook-ctrl-btn {
+    border-color: rgba(196, 168, 130, 0.42);
+    color: #c4a882;
+}
+
+.flipbook-controls .flipbook-page-indicator {
+    color: rgba(250, 248, 245, 0.68);
+}
+
+/* ══ Red de seguridad: nada se sale de la página ══ */
+.page-list .list-section {
+    overflow: hidden;
+}
+
+/* ══ Modal de plato — más grande ══ */
+.dish-modal-card {
+    max-width: 560px;
+    --dm-px: 2.4rem;
+    --dm-pt: 2.6rem;
+    --dm-pb: 2.2rem;
+    --dm-r: 20px;
+}
+
+.dish-modal-name {
+    font-size: 2.1rem;
+    line-height: 1.22;
+}
+
+.dish-modal-desc {
+    font-size: 1.4rem;
+    line-height: 1.55;
+}
+
+.dish-modal-price {
+    font-size: 2.2rem;
+}
+
+.dish-modal-num {
+    font-size: 1.05rem;
+}
+
+.dish-modal-label {
+    font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+    .dish-modal-card {
+        --dm-px: 1.5rem;
+        --dm-pt: 1.9rem;
+        --dm-pb: 1.5rem;
+    }
+
+    .dish-modal-name {
+        font-size: 1.7rem;
+    }
+
+    .dish-modal-desc {
+        font-size: 1.2rem;
+    }
+
+    .dish-modal-price {
+        font-size: 1.9rem;
+    }
+
+    .dish-modal .dish-modal-allergens-icons img {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+
+    .dish-modal-allergens-names {
+        font-size: 0.95rem;
+    }
+}
+
+/* ── Árabe (RTL) ──────────────────────────────────────────────────────────────
+   El libro y su contenedor se quedan en LTR para que turn.js siga colocando
+   las páginas correctamente; el texto de dentro de las páginas sí va en RTL. */
+html[dir="rtl"] .flipbook-section {
+    direction: ltr;
+}
+
+html[dir="rtl"] .page-content {
+    direction: rtl;
+}
+
+html[dir="rtl"] .page-list .list-item {
+    text-align: right;
+}
+
+/* Escritorio: el bloque (título + islas + libro + controles) queda centrado
+   verticalmente, y si no cabe en la pantalla se puede desplazar sin que se
+   recorte la parte de arriba. */
+@media (min-width: 769px) {
+    .flipbook-container {
+        margin-block: auto;
+    }
+}
+
+/* Escritorio con ventana estrecha: las islas de secciones pasan a dos filas
+   en vez de quedar recortadas (en móvil siguen desplazándose en una fila). */
+@media (min-width: 769px) {
+    .section-island {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        row-gap: 2px;
+        border-radius: 26px;
+        padding: 5px 8px;
+    }
+}
+
+/* ── Portada: logo centrado (aire igual arriba y abajo) + firma al pie ── */
+.flipbook-photo-layer.cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1.9rem, 8%, 3.2rem) 1.5rem clamp(1.5rem, 7%, 2.8rem);
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 44%, #1b140d 0%, #0b0906 78%);
+}
+
+.cover-page .cover-logo-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 0;
+}
+
+.cover-page .cover-logo {
+    width: min(380px, 88%);
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.65));
+}
+
+.cover-page .cover-sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.42rem;
+    padding: 0 1.1rem;
+    flex-shrink: 0;
+}
+
+.cover-page .cover-rule {
+    width: 72px;
+    height: 1px;
+    margin-bottom: 0.42rem;
+    background: linear-gradient(90deg, rgba(196, 168, 130, 0) 0%, rgba(196, 168, 130, 0.85) 50%, rgba(196, 168, 130, 0) 100%);
+}
+
+.cover-page .cover-sign p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(0.66rem, 2.5vw, 0.84rem);
+    line-height: 1.75;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(232, 223, 213, 0.8);
+    white-space: nowrap;
+}
+
+.cover-page .cover-sign p+p {
+    color: rgba(196, 168, 130, 0.92);
+}
+
+/* En pantallas muy estrechas el texto puede partirse: lo permitimos sin romper */
+@media (max-width: 360px) {
+    .cover-page .cover-sign p {
+        white-space: normal;
+    }
+}
+
+/* ══ Alérgenos · iconos dentro del detalle del plato ══ */
+.dish-modal-allergens {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    row-gap: 0.15rem;
+    margin: 0.55rem 0 0.1rem;
+}
+
+.dish-modal-allergens[hidden] {
+    display: none;
+}
+
+.dish-modal-allergens-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.dish-modal-allergens-icons img {
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: contain;
+}
+
+
+/* Nombres escritos de los alérgenos: van debajo, en su propia línea,
+   para que el detalle se entienda sin conocer el dibujo del icono. */
+.dish-modal-allergens-names {
+    flex-basis: 100%;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.3;
+    color: rgba(58, 48, 38, 0.7);
+}
+
+/* Las páginas de información y de alérgenos se escalan con la altura de la
+   página del libro: así no se cortan nunca (cqh, con respaldo en vh).
+   El cqh se usa en el hijo: un elemento no se consulta a sí mismo. */
+.page-scaled .page-content {
+    container-type: size;
+}
+
+.page-scaled .list-section {
+    font-size: clamp(0.6rem, 1.6vh, 0.95rem);
+    font-size: 2.6cqh;
+}
+
+
+/* La página de alérgenos lleva más contenido (icono + nombre + explicación):
+   se le da algo más de cuerpo para que la página se vea llena y no se corte. */
+.page-scaled.p19 .list-section {
+    /* página «Alergeni e icone» (antes era la 22) */
+    font-size: 3.0cqh;
+}
+
+/* Pantallas muy bajas (móvil en horizontal): la página de alérgenos lleva
+   mucho contenido y con 3.0cqh aún se cortaban unos píxeles a 667×375. */
+@media (max-height: 480px) {
+    .page-scaled.p19 .list-section {
+        font-size: 2.7cqh;
+    }
+
+    .allerg-page-grid {
+        gap: 0.42em;
+    }
+
+    .allerg-page-item img {
+        width: 1.9em;
+        height: 1.9em;
+    }
+}
+
+
+/* ── Página de alérgenos: icono y nombre al lado ── */
+/* Con 8 iconos (senape incluido) la página va más cargada: rejilla algo más
+   junta y iconos un poco más pequeños para que nunca se corte. */
+.allerg-page-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.58em;
+    margin: 0.15em 0 0;
+}
+
+.allerg-page-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.allerg-page-item img {
+    flex-shrink: 0;
+    width: 2.14em;
+    height: 2.14em;
+    object-fit: contain;
+}
+
+.allerg-page-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+    min-width: 0;
+    text-align: start;
+}
+
+.allerg-page-name {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 1.12em;
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    color: rgba(38, 31, 24, 0.9);
+}
+
+/* Explicación corta: qué alimentos representa cada icono. */
+.allerg-page-desc {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 0.78em;
+    font-style: italic;
+    line-height: 1.18;
+    color: rgba(58, 48, 38, 0.62);
+}
+
+.allerg-page-nota {
+    margin: 0;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 0.82em;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: center;
+    color: rgba(58, 48, 38, 0.72);
+}
+
+.allerg-page-nota2 {
+    margin: 0.25em 0 0;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 0.74em;
+    line-height: 1.35;
+    text-align: center;
+    color: rgba(120, 102, 84, 0.85);
+}
+
+/* ── Enlace "Allergeni" en la página de información ── */
+.allerg-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45em;
+    margin: 0.15em auto 0;
+    padding: 0.45em 1em;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72em;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #a8823c;
+    background: rgba(196, 168, 130, 0.1);
+    border: 1px solid rgba(196, 168, 130, 0.45);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.allerg-link:hover {
+    background: rgba(196, 168, 130, 0.22);
+    color: #8c6a2c;
+}
+
+/* ── Cara interior de la contraportada ── */
+.blank-page {
+    background: linear-gradient(150deg, #f5ede2 0%, #ede3d4 55%, #e6dacb 100%);
+}
+
+/* Pantallas bajas (portátil pequeño, móvil apaisado): la foto del detalle se
+   recorta para que nombre, alérgenos, descripción y precio se vean a la vez. */
+@media (max-height: 760px) {
+    .dish-modal-photo {
+        max-height: 36vh;
+    }
+}
