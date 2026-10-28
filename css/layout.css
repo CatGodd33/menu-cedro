@@ -1,0 +1,48 @@
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: calc(1.2rem + var(--safe-t)) calc(2.5rem + var(--safe-r)) 1.2rem calc(2.5rem + var(--safe-l));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(26, 26, 30, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 168, 130, 0.1);
+}
+
+.navbar-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--ivory);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+}
+
+.navbar-logo span {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    margin-left: 0.6rem;
+    opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: calc(0.8rem + var(--safe-t)) calc(1.2rem + var(--safe-r)) 0.8rem calc(1.2rem + var(--safe-l));
+    }
+}
+/* En pantallas muy estrechas el apellido del logo se oculta
+   para que el selector de idiomas no se parta en dos filas. */
+@media (max-width: 480px) {
+    .navbar-logo span {
+        display: none;
+    }
+}
